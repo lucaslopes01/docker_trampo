@@ -1,0 +1,21 @@
+version: '1'
+
+services:
+ mongo:
+   image: mongo
+   container_name: mongo
+   restart: always
+   ports:
+     - 27017:27017
+   environment:
+     MONGO_INIT_ROOT_USERNAME: root
+     MONGO_INIT_ROOT_PASSWORD: example
+ mongo-express:
+   image: mongo-express
+   container_name: mongo-express-test
+   restart: always
+   ports:
+      - 8081:8081
+   environment:
+     MONGO_INIT_ROOT_ADMINUSERNAME: root1
+     MONGO_INIT_ROOT_ADMINPASSWORD: example2
